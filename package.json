@@ -1,0 +1,31 @@
+{
+  "name": "namer",
+  "version": "1.0.0",
+  "description": "CLI utility that helps construct names adhering to naming conventions.",
+  "files": [
+    "lib"
+  ],
+  "bin": {
+    "namer": "./index.js"
+  },
+  "keywords": [
+    "naming",
+    "conventions",
+    "cli"
+  ],
+  "scripts": {},
+  "repository": "kschulst/namer",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.11.0",
+    "download": "^6.2.5",
+    "fuzzy": "^0.1.3",
+    "inquirer": "^3.2.2",
+    "inquirer-autocomplete-prompt": "^0.11.1",
+    "lodash": "^4.3.0",
+    "minimist": "^1.2.0",
+    "promise": "^8.0.1",
+    "rc": "^1.2.1"
+  },
+  "devDependencies": {}
+}
