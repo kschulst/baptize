@@ -30,6 +30,14 @@ generators.randomDigits = function(length) {
   return result; 
 };
 
+generators.randomChars = function(length) {
+    var chars = "abcdefghijklmnopqrstuvwxyz";
+    let result = '';
+    for (var i = length; i > 0; --i) {
+        result += chars[Math.floor(Math.random() * 26)];
+    }
+    return result;
+};
 
 
 /**
