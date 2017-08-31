@@ -1,0 +1,21 @@
+{
+  "id": "https://raw.githubusercontent.com/kschulst/baptz/master/nc-schema.json",
+  "required" : ["name", "resources", "questions"],
+  "properties": {
+    "name": {
+      "id": "/properties/name",
+      "type": "string"
+    },
+    "resources": {
+      "id": "/properties/resources",
+      "items": {},
+      "type": "array"
+    },
+    "questions": {
+      "id": "/properties/questions",
+      "items": {},
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

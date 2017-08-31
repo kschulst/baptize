@@ -1,20 +1,26 @@
 #! /usr/bin/env node
+/**
+ * Baptz
+ *
+ * CLI utility that helps construct names adhering to naming conventions described in templates.
+ */
 
 'use strict';
-var program = require('commander');
+const program = require('commander');
+const Configstore = require('configstore');
+const config = new Configstore('baptz');
 
 program
-  .version('0.1.0')
-//  .option('-p, --peppers', 'Add peppers')
-//  .option('-P, --pineapple', 'Add pineapple')
-//  .option('-b, --bbq-sauce', 'Add bbq sauce')
-//  .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
-  .command('update [name]', 'update the registered naming conventions')
-  .command('construct', 'construct a name based on the current active naming convention', {isDefault: true})
-  .parse(process.argv);
+  .version(require('./package.json').version)
+  .command('run', 'construct a name based on the current active naming convention - default if no command specified', {isDefault: true})
+  .command('add', 'add a new naming convention')
+  .command('update', 'reload naming convention(s)')
+  .command('nc', 'specify naming convention to use (if multiple available)');
 
-//console.log('you ordered a pizza with:');
-//if (program.peppers) console.log('  - peppers');
-//if (program.pineapple) console.log('  - pineapple');
-//if (program.bbqSauce) console.log('  - bbq');
-//console.log('  - %s cheese', program.cheese);
+program.on('--help', function(){
+    console.log('');
+    console.log('  Active naming convention: ' + config.get('active') || 'N/A');
+});
+
+
+program.parse(process.argv);

@@ -1,24 +1,30 @@
-const download = require('download');
+"use strict";
 
+const Configstore = require('configstore');
+const config = new Configstore('baptz');
+const inquirer = require('inquirer');
+const ncDownloader = require('./nc-download');
 
-var config = require('rc')("baptz", {
-  "namingConventions": [
-    { "name": "tine-aws",
-      "url": "https://raw.githubusercontent.com/kschulst/bootiful-microservices-config/master/auth-service.properties"
-    }
-  ]
-});
+let namingConventions = config.get('namingConventions');
 
-console.log("update!!!");
-
-config.namingConventions.forEach(nc => {
-	console.log("config", config.configs);
-	let configFile = config.configs[0];
-	let path = configFile.substring(0, configFile.lastIndexOf('/'));
-	download(nc.url, path, {filename: nc.name + ".json"});
-//	console.log("nc", nc.name, nc.url, config.configs[0]);
-});
-
-//download('', 'dist').then(() => {
-//    console.log('done!');
-//});
+if (! namingConventions || namingConventions.length === 0) {
+    console.log("No naming conventions registered yet. Go ahead and add one using 'baptz add'");
+}
+else if (namingConventions.length === 1) {
+    ncDownloader.downloadNamingConvention(namingConventions[0].url);
+}
+else {
+    let choices = namingConventions.map(nc => {
+        return {name: nc.name, value: nc.url}
+    });
+    inquirer.prompt([
+        {
+            type: 'checkbox',
+            name: 'urls',
+            choices: choices,
+            message: 'Select naming conventions to update...'
+        }
+    ]).then(answers => {
+        answers.urls.forEach(url => ncDownloader.downloadNamingConvention(url));
+    });
+}
