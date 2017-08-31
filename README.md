@@ -17,8 +17,6 @@ supplying a URL to the configuration. As such, the naming convention can be host
 ### Usage
 <a name="installation"></a>
 
-
-##### Construct a new name based on the active naming convention
 ``` shell
 $ baptz --help
 
@@ -33,10 +31,11 @@ $ baptz --help
 
   Commands:
 
-    run         construct a name based on the current active naming convention - default if no command specified
+    run         construct a name based on the current active naming 
+                convention - default if no command specified
     add         add a new naming convention
-    update      reload naming convention(s) from URL it was installed at
-    nc          specify naming convention to use (if multiple available)
+    update      reload naming convention(s)
+    nc          set naming convention to use (if multiple available)
     help [cmd]  display help for [cmd]
 
   Active naming convention: my-aws-naming-convention
@@ -45,7 +44,7 @@ $ baptz --help
 
 ## Naming conventions
 
-_Naming conventions_ are json configuration files consisting of templates and questions. Examples says more than 1000 words:
+_Naming conventions_ are json configuration files consisting of templates and questions. Examples say more than 1000 words:
 
 ``` json
 {
@@ -128,7 +127,7 @@ _Naming conventions_ are json configuration files consisting of templates and qu
 
 ### Config location
 
-Baptz configuration is stored at `<USER_HOME>>/.config/configstore/baptz.json`
+Baptz configuration is stored at `<USER_HOME>/.config/configstore/baptz.json`
 
 ### Resources
 
