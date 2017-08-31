@@ -151,9 +151,11 @@ prefixed with `f:`, such as `f:randomDigits(12)`. When running baptz, these
 placeholders will be subsituted with the result of such a generator function.
 The following generator functions are available:
 
-| Generator      | Params        | Example            | Description   |
-| -------------: | -------------:| ------------------:| -------------:|
-| randomDigits   |  size (int)   | f:randomDigits(12) | Returns a random string of digits of specified length |        
+| Generator      | Params        | Example             | Description   |
+| -------------: | -------------:| -------------------:| -------------:|
+| randomDigits   |  size (int)   | f:randomDigits(12)  | Returns a random string of digits with specified length |        
+| randomChars    |  size (int)   | f:randomChars(4)    | Returns a random string of letters with specified length |        
+| randomAlphanum |  size (int)   | f:randomAlphanum(4) | Returns a random string of alphanumeric characters with specified length |        
 
 
 
