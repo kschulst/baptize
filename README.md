@@ -131,11 +131,11 @@ Baptz configuration is stored at `<USER_HOME>/.config/configstore/baptz.json`
 
 ### Resources
 
-A resource is described by a name and a template. Templates contain placeholders
-(enclosed by braces, {}). Placeholders point at questions (which are defined in the
-`questions` array of the config file). When running baptz for a given template,
-the placeholders will be populated by the answers to the questions associated
-with the placeholder.
+A naming convention resource is described by a name and a template. Templates contain
+placeholders (enclosed by braces, {}). Placeholders point at questions (which are defined
+in the `questions` array of the config file). When running baptz for a given template,
+the placeholders will be populated by the answers to the questions associated with the
+placeholder.
 
 If a placeholder references a question that is not defined in the `questions`
 array, the an "input type" question will be constructed automatically based on the name.
