@@ -3,7 +3,7 @@ Baptz
 
 CLI utility that helps construct names adhering to naming conventions.
 
-### Installation
+## Installation
 <a name="installation"></a>
 
 ``` shell
@@ -14,7 +14,7 @@ You will also need to install a naming convention configuration by doing `baptz 
 supplying a URL to the configuration. As such, the naming convention can be hosted externally
 (e.g. in a git repo).
 
-### Usage
+## Usage
 <a name="installation"></a>
 
 ``` shell
@@ -40,7 +40,6 @@ $ baptz --help
 
   Active naming convention: my-aws-naming-convention
 ```
-
 
 ## Naming conventions
 
@@ -138,7 +137,7 @@ the placeholders will be populated by the answers to the questions associated wi
 placeholder.
 
 If a placeholder references a question that is not defined in the `questions`
-array, the an "input type" question will be constructed automatically based on the name.
+array, an "input type" question will be constructed automatically based on the name.
 
 ### Questions
 
@@ -146,7 +145,7 @@ Defines questions according to https://www.npmjs.com/package/inquirer#questions
 
 ### Generator functions
 
-Placeholders can reference "generator" functions. These are
+Placeholders can reference "generator functions". These are
 prefixed with `f:`, such as `f:randomDigits(12)`. When running baptz, these
 placeholders will be subsituted with the result of such a generator function.
 The following generator functions are available:
@@ -158,8 +157,9 @@ The following generator functions are available:
 | randomAlphanum |  size (int)   | f:randomAlphanum(4) | Returns a random string of alphanumeric characters with specified length |        
 
 
+## Issues
 
-
+Submit bugs, feature requests or questions [here](https://github.com/kschulst/baptz/issues)
 
 ### Source
 [Github](https://github.com/kschulst/baptz)
