@@ -41,6 +41,20 @@ $ baptz --help
   Active naming convention: my-aws-naming-convention
 ```
 
+### Config
+
+Baptz configuration is stored at `<USER_HOME>/.config/configstore/baptz.json`
+
+In addition to the `namingConventions` config, the following config props are available:
+
+| Name                   | Description                                                                                   |
+| :----------------------| ---------------------------------------------------------------------------------------------:|
+| active                 | The name of the active naming convention. Can be set in the CLI using the `baptz nc` command. |
+| autoUpdate             | Boolean denoting whether or not auto updating is turned on. Defaults to true.                 |
+| autoUpdateAfterMinutes | The number of minutes between each update check. Defaults to 120                              |
+| lastUpdated            | ISO date for when the last update was run.                                                    |
+
+
 ## Naming conventions
 
 _Naming conventions_ are json configuration files consisting of templates and questions. Examples say more than 1000 words:
@@ -123,10 +137,6 @@ _Naming conventions_ are json configuration files consisting of templates and qu
   ]
 }
 ```
-
-### Config location
-
-Baptz configuration is stored at `<USER_HOME>/.config/configstore/baptz.json`
 
 ### Resources
 
