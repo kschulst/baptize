@@ -1,6 +1,6 @@
 {
   "name": "baptz",
-  "version": "0.9.6",
+  "version": "0.9.7",
   "description": "CLI utility that helps construct names adhering to naming conventions.",
   "files": [
     "lib"
