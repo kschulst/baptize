@@ -41,6 +41,15 @@ $ baptz --help
   Active naming convention: my-aws-naming-convention
 ```
 
+## Releases
+
+####0.9.7
+* Support for filter functions. Placeholders can now be prefixed with special
+"filter functions" in order for answers to be post-processed. E.g. to transform
+answers into PascalCase.
+* Resources now have a `shortname` property. These can be referenced in your templates.
+* Special "resourceRef" placeholder that can be used to prompt for other resources.
+
 ### Config
 
 Baptz configuration is stored at `<USER_HOME>/.config/configstore/baptz.json`
@@ -158,13 +167,38 @@ Defines questions according to https://www.npmjs.com/package/inquirer#questions
 Placeholders can reference "generator functions". These are
 prefixed with `f:`, such as `f:randomDigits(12)`. When running baptz, these
 placeholders will be subsituted with the result of such a generator function.
+
 The following generator functions are available:
 
-| Generator      | Params        | Example             | Description   |
-| -------------: | -------------:| -------------------:| -------------:|
-| randomDigits   |  size (int)   | f:randomDigits(12)  | Returns a random string of digits with specified length |        
-| randomChars    |  size (int)   | f:randomChars(4)    | Returns a random string of letters with specified length |        
-| randomAlphanum |  size (int)   | f:randomAlphanum(4) | Returns a random string of alphanumeric characters with specified length |        
+| Generator               | Params        | Example                      | Description   |
+| -----------------------:| -------------:| ----------------------------:| -------------------------------------------------------------------------------------:|
+| randomDigits            |  size (int)   | f:randomDigits(12)           | Returns a random string of digits with specified length                               |        
+| randomChars             |  size (int)   | f:randomChars(4)             | Returns a random string of letters with specified length                              |        
+| randomCharsUpperCase    |  size (int)   | f:randomCharsUpperCase(4)    | Returns an upper-cased random string of letters with specified length                 |        
+| randomAlphanum          |  size (int)   | f:randomAlphanum(4)          | Returns a random string of alphanumeric characters with specified length              |        
+| randomAlphanumUpperCase |  size (int)   | f:randomAlphanumUpperCase(4) | Returns an upper-cased random string of alphanumeric characters with specified length |        
+
+### Filter functions
+
+Placeholders can reference "filter functions". These are prefixed with &lt;functionName&gt;:,
+such as `pc:myQuestion`. When running baptz, these placeholders will be substituted with the filtered output of a user's answer
+to the question. E.g. if the user answers "my answer", then "MyAnswer" will be the result.
+
+The following filter functions are available:
+
+| Filter         | Example             | Description   |
+| -------------: | -------------------:| -------------:|
+| uc             | uc:myQuestion       | UPPERCASE     |
+| lc             | lc:myQuestion       | lowercase     |
+| pc             | pc:myQuestion       | PascalCase    |
+| cc             | cc:myQuestion       | camelCase     |
+
+### Special placeholders/questions
+
+| Placeholder | Description 
+| ----------: | ----------:
+| shortname   | The resource `shortname` value from the resource JSON (config)
+| resourceRef | Prompts to select another resource, and outputs its shortname. Can be used if you need your resource to reference another resource.
 
 
 ## Issues

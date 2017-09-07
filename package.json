@@ -18,6 +18,7 @@
   "license": "MIT",
   "dependencies": {
     "ajv": "^5.2.2",
+    "camelcase": "^4.1.0",
     "commander": "^2.11.0",
     "configstore": "^3.1.1",
     "download": "^6.2.5",
@@ -29,7 +30,8 @@
     "minimist": "^1.2.0",
     "moment": "^2.18.1",
     "promise": "^8.0.1",
-    "request": "^2.81.0"
+    "request": "^2.81.0",
+    "uppercamelcase": "^3.0.0"
   },
   "devDependencies": {}
 }
