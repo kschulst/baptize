@@ -225,6 +225,10 @@ Submit bugs, feature requests or questions [here](https://github.com/kschulst/ba
 
 ## Release notes
 
+
+#### 0.9.9
+* Bugfixes
+
 #### 0.9.8
 * Bugfixes
 * Support for more filter functions
