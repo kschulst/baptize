@@ -185,6 +185,8 @@ The following filter functions are available:
 | lc             | lc:myQuestion       | lowercase     |
 | pc             | pc:myQuestion       | PascalCase    |
 | cc             | cc:myQuestion       | camelCase     |
+| sc             | cc:myQuestion       | snake_case    |
+| kc             | cc:myQuestion       | kebab-case    |
 
 ### Special placeholders/questions
 
@@ -222,6 +224,10 @@ Submit bugs, feature requests or questions [here](https://github.com/kschulst/ba
 
 
 ## Release notes
+
+#### 0.9.8
+* Bugfixes
+* Support for more filter functions
 
 #### 0.9.7
 * Support for filter functions. Placeholders can now be prefixed with special
