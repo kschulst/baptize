@@ -3,6 +3,7 @@ Baptz
 
 CLI utility that helps construct names adhering to naming conventions.
 
+
 ## Installation
 <a name="installation"></a>
 
@@ -13,6 +14,7 @@ npm install -g baptz
 You will also need to install a naming convention configuration by doing `baptz add` and
 supplying a URL to the configuration. As such, the naming convention can be hosted externally
 (e.g. in a git repo).
+
 
 ## Usage
 <a name="installation"></a>
@@ -41,16 +43,7 @@ $ baptz --help
   Active naming convention: my-aws-naming-convention
 ```
 
-## Releases
-
-####0.9.7
-* Support for filter functions. Placeholders can now be prefixed with special
-"filter functions" in order for answers to be post-processed. E.g. to transform
-answers into PascalCase.
-* Resources now have a `shortname` property. These can be referenced in your templates.
-* Special "resourceRef" placeholder that can be used to prompt for other resources.
-
-### Config
+## Config
 
 Baptz configuration is stored at `<USER_HOME>/.config/configstore/baptz.json`
 
@@ -201,14 +194,6 @@ The following filter functions are available:
 | resourceRef | Prompts to select another resource, and outputs its shortname. Can be used if you need your resource to reference another resource.
 
 
-## Issues
-
-Submit bugs, feature requests or questions [here](https://github.com/kschulst/baptz/issues)
-
-### Source
-[Github](https://github.com/kschulst/baptz)
-
-
 ## Support (OS Terminals)
 <a name="support"></a>
 
@@ -225,6 +210,33 @@ Baptz is based on Inquirer.js, thus you should expect mostly good support for th
 - **Linux (Ubuntu, openSUSE, Arch Linux, etc)**:
   - gnome-terminal (Terminal GNOME)
   - konsole
+
+
+## Issues
+
+Submit bugs, feature requests or questions [here](https://github.com/kschulst/baptz/issues)
+
+
+## Source
+[Github](https://github.com/kschulst/baptz)
+
+
+## Release notes
+
+#### 0.9.7
+* Support for filter functions. Placeholders can now be prefixed with special
+"filter functions" in order for answers to be post-processed. E.g. to transform
+answers into PascalCase.
+* Resources now have a `shortname` property. These can be referenced in your templates.
+* Special "resourceRef" placeholder that can be used to prompt for other resources.
+
+#### 0.9.6.
+* Support auto updating of configuration. Ensures that your naming convetions stays updated
+without having to explicitly do `baptz update`. Can be turned off by switching a flag in your
+local baptz config.
+
+#### 0.9.5
+* First release
 
 
 ## License
