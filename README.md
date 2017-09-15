@@ -226,6 +226,10 @@ Submit bugs, feature requests or questions [here](https://github.com/kschulst/ba
 ## Release notes
 
 
+#### 0.9.10
+* Fixed bug related to dynamic placeholders not being replaced
+* Print information when no config updates were found
+
 #### 0.9.9
 * Bugfixes
 
